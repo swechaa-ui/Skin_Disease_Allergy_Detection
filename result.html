@@ -1,0 +1,29 @@
+<h2>Disease: {{ disease }}</h2>
+<p>Confidence: {{ confidence }}</p>
+
+<h3>Final Disease: {{ recommendations.final_disease }}</h3>
+
+<h3>Foods to Eat:</h3>
+<ul>
+{% for food in recommendations.foods_to_eat %}
+<li>{{ food }}</li>
+{% endfor %}
+</ul>
+
+<h3>Foods to Avoid:</h3>
+<ul>
+{% for food in recommendations.foods_to_avoid %}
+<li>{{ food }}</li>
+{% endfor %}
+</ul>
+
+{% for doc in doctors %}
+<p>
+<strong>{{doc.name}}</strong> - {{doc.distance}} km
+<a href="https://www.google.com/maps?q={{doc.lat}},{{doc.lon}}" target="_blank">
+View Map
+</a>
+</p>
+{% endfor %}
+</ul>
+{% endif %}

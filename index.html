@@ -1,0 +1,29 @@
+<form method="POST" action="/analyze" enctype="multipart/form-data">
+<form method="POST" action="/analyze">
+
+<textarea name="symptoms" placeholder="Enter symptoms"></textarea><br>
+
+<textarea name="ingredients" placeholder="Enter ingredients"></textarea><br>
+
+<input type="hidden" name="lat" id="lat">
+<input type="hidden" name="lon" id="lon">
+
+<button type="submit">Analyze</button>
+
+</form>
+    <textarea name="symptoms" placeholder="Enter symptoms"></textarea><br>
+    <textarea name="ingredients" placeholder="Enter ingredients"></textarea><br>
+    <input type="hidden" name="lat" id="lat">
+    <input type="hidden" name="lon" id="lon">
+    <button type="submit">Analyze</button>
+</form>
+
+<input type="hidden" id="lat" name="lat">
+<input type="hidden" id="lon" name="lon">
+
+<script>
+navigator.geolocation.getCurrentPosition(function(position){
+    document.getElementById("lat").value = position.coords.latitude;
+    document.getElementById("lon").value = position.coords.longitude;
+});
+</script>
